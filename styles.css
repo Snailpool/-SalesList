@@ -1,0 +1,32 @@
+body{
+	margin: 0;
+}
+.add-block{
+	background-color: #4b585f;
+}
+.add-table{
+	color:white;
+	height: 65px;
+}
+.add-table__cell,.list-table__cell{
+	text-align: center;
+	width: 170px;
+    border-right: 1px solid white;
+}
+.add-table__cell:last-child{
+    border-right: none;
+}
+.add-table__input{
+    width: 80%;
+}
+.btn{
+	width:80px;
+	height:25px;
+	color:white;
+	border: none;
+	background-color: #009688;
+}
+
+.list-table{
+
+}

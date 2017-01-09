@@ -1,0 +1,14 @@
+{
+  "name": "sales-form",
+  "version": "0.0.1",
+  "main": "index.html",
+  "devDependencies": {
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "window": {
+        "width": 800,
+        "height": 600
+    }
+}

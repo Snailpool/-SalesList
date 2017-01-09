@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>a</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="app.js"></script>
+	</head>
+  <body>
+	<div class="add-block">
+		<table class="add-table">
+			<thead>
+				<tr>
+					<th class="add-table__cell">品名規格</th>
+					<th class="add-table__cell">銷貨單價</th>
+					<th class="add-table__cell">銷貨數量</th>
+					<th class="add-table__cell">備註</th>
+					<th class="add-table__cell">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="add-table__cell">
+					 	<input class="add-table__input" list="nameList" id="name">
+						<datalist id="nameList">
+							<option value="product A">
+							<option value="product B">
+							<option value="product C">
+						</datalist>
+					</td>
+					<td class="add-table__cell">
+						<input class="add-table__input" id="pricePerBox" type="text" />
+					</td>
+					<td class="add-table__cell">
+						<input class="add-table__input" id="count" type="text" />箱
+					</td>
+					<td class="add-table__cell">
+						<input class="add-table__input" id="memo" type="text" />
+					</td>
+					<td class="add-table__cell">
+						<button class="btn"  onclick="append()">新增</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+    <div>
+    	<table class="list-table">
+			<thead>
+				<tr>
+					<th class="list-table__cell">品名規格</th>
+					<th class="list-table__cell">銷貨單價</th>
+					<th class="list-table__cell">銷貨數量</th>
+					<th class="list-table__cell">小計</th>
+					<th class="list-table__cell">備註</th>
+					<th class="list-table__cell">操作</th>
+				</tr>
+			</thead>
+			<tbody id="productList">
+			</tbody>
+		</table>
+		<hr/>
+		<div id="totalPrice">
+		</div>
+		<button class="btn">列印</button>
+    </div>
+  </body>
+</html>
