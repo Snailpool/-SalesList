@@ -1,11 +1,47 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>a</title>
+		<meta charset="utf-8">
+		<title>銷貨單</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="app.js"></script>
 	</head>
   <body>
 	<div class="add-block">
+		<table class="add-table">
+			<thead>
+				<tr>
+					<th class="add-table__cell">客戶名稱</th>
+					<th class="add-table__cell">客戶地址</th>
+					<th class="add-table__cell">客戶電話</th>
+					<th class="add-table__cell">客戶傳真</th>
+					<th class="add-table__cell">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="add-table__cell">
+					 	<input class="add-table__input" list="customerList" id="customerName" onchange="bindCustomerInfo(this)">
+						<datalist id="customerList">
+							<option data-id="0" value="尼好有限公司">
+							<option data-id="1" value="太陽有限公司">
+						</datalist>
+					</td>
+					<td class="add-table__cell">
+						<input class="add-table__input" id="address" type="text" />
+					</td>
+					<td class="add-table__cell">
+						<input class="add-table__input" id="phone" type="text" />
+					</td>
+					<td class="add-table__cell">
+						<input class="add-table__input" id="fax" type="text" />
+					</td>
+					<td class="add-table__cell">
+						<button class="btn"  onclick="editCustomer()">確定</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<table class="add-table">
 			<thead>
 				<tr>
@@ -21,9 +57,11 @@
 					<td class="add-table__cell">
 					 	<input class="add-table__input" list="nameList" id="name">
 						<datalist id="nameList">
-							<option value="product A">
-							<option value="product B">
-							<option value="product C">
+							<option value="很好用菜瓜布">
+							<option value="還好菜瓜布">
+							<option value="很好吃絲瓜">
+							<option value="絲瓜公仔">
+							<option value="人生的意義">
 						</datalist>
 					</td>
 					<td class="add-table__cell">
@@ -42,7 +80,12 @@
 			</tbody>
 		</table>
 	</div>
-    <div>
+    <div class="sales-block" id="salesBlock">
+		<h1 class="sales-block__title">銷貨單</h1>
+		<table class="upper-table" id="customerTable">
+		</table>
+		<br/>
+		<br/>
     	<table class="list-table">
 			<thead>
 				<tr>
@@ -50,17 +93,17 @@
 					<th class="list-table__cell">銷貨單價</th>
 					<th class="list-table__cell">銷貨數量</th>
 					<th class="list-table__cell">小計</th>
-					<th class="list-table__cell">備註</th>
-					<th class="list-table__cell">操作</th>
+					<th class="list-table__cell list-table__cell--long">備註</th>
+					<th class="list-table__cell edit-cell">操作</th>
 				</tr>
 			</thead>
 			<tbody id="productList">
 			</tbody>
 		</table>
-		<hr/>
-		<div id="totalPrice">
-		</div>
-		<button class="btn">列印</button>
+		<p id="totalPrice" class="sales-block__total">
+		</p>
     </div>
+	<button class="btn btn--save" onclick="saveFile()">儲存檔案</button>
   </body>
 </html>
+

@@ -8,10 +8,18 @@ body{
 	color:white;
 	height: 65px;
 }
-.add-table__cell,.list-table__cell{
+.add-table__cell{
 	text-align: center;
-	width: 170px;
+	width: 180px;
     border-right: 1px solid white;
+}
+.list-table__cell{
+    border-bottom: dashed 1px gray;
+	width: 140px;
+	text-align: center;
+}
+thead .list-table__cell{
+    border-bottom: solid 1px gray;
 }
 .add-table__cell:last-child{
     border-right: none;
@@ -25,8 +33,36 @@ body{
 	color:white;
 	border: none;
 	background-color: #009688;
+	cursor: pointer;
+	font-weight: 600;
 }
-
+.btn--delete{
+	background-color:transparent;
+	color:#ff5757;
+	cursor: pointer;
+	font-weight: 600;
+}
+.btn--save{
+    clear: both;
+	float: right;
+}
+.sales-block__total{
+	text-align: right;
+}
 .list-table{
-
+    font-size: 12px;
+    width: 100%;
+}
+.list-table__cell--long{
+    width: 300px;
+}
+.sales-block {
+    min-height: 400px;
+}
+.sales-block__title{
+	text-align: center;
+}
+.upper-table{
+	font-size:12px;
+	width:100%;
 }
