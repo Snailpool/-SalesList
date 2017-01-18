@@ -1,0 +1,13 @@
+{
+   "env": {
+     "node": true,
+     "browser": true,
+   },
+   "extends": "airbnb-base",
+   "rules": {
+     "arrow-body-style": ["error", "always"],
+     "no-console": 0,
+    "indent": ["error", "tab"],
+      "no-tabs": 0 // because airbnb says:no tab
+   }
+ }
