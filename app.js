@@ -56,11 +56,11 @@ class SalesForm {
 					</tr>
 					<tr>
 						<td><p class="upper-block__text">客戶地址：${document.getElementById('address').value}</p></td>
-						<td><p class="upper-block__text">負責人：胡東茂</p></td>
+						<td><p class="upper-block__text">負責公司：呼嚕嚕有限公司</p></td>
 					</tr>
 					<tr>
 						<td><p class="upper-block__text">客戶電話：${document.getElementById('phone').value} ${fax}</p></td>
-						<td><p class="upper-block__text">聯絡電話：048950029</p></td>
+						<td><p class="upper-block__text">聯絡電話：0411212121</p></td>
 					</tr>`;
 	}
 
