@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<title>銷貨單</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<script src="app.js"></script>
 	</head>
   <body>
 	<div class="add-block">
@@ -21,7 +20,7 @@
 			<tbody>
 				<tr>
 					<td class="add-table__cell">
-					 	<input class="add-table__input" list="customerList" id="customerName" onchange="bindCustomerInfo(this)">
+					 	<input class="add-table__input" list="customerList" id="customerName" >
 						<datalist id="customerList">
 							<option data-id="0" value="尼好有限公司">
 							<option data-id="1" value="太陽有限公司">
@@ -37,7 +36,7 @@
 						<input class="add-table__input" id="fax" type="text" />
 					</td>
 					<td class="add-table__cell">
-						<button class="btn"  onclick="editCustomer()">確定</button>
+						<button class="btn" id="addCustomerBtn" >確定</button>
 					</td>
 				</tr>
 			</tbody>
@@ -74,7 +73,7 @@
 						<input class="add-table__input" id="memo" type="text" />
 					</td>
 					<td class="add-table__cell">
-						<button class="btn"  onclick="append()">新增</button>
+						<button class="btn"  id="addProductBtn" >新增</button>
 					</td>
 				</tr>
 			</tbody>
@@ -103,7 +102,8 @@
 		<p id="totalPrice" class="sales-block__total">
 		</p>
     </div>
-	<button class="btn btn--save" onclick="saveFile()">儲存檔案</button>
+	<button class="btn btn--save" id="saveFilebtn">儲存檔案</button>
+	<script src="app.js"></script>
   </body>
 </html>
 
