@@ -1,5 +1,6 @@
 # 銷貨單
 Use nw.js to build a simple sales list system write in es6 syntax.
+
 簡單的銷貨單，添加商品並儲存至docx檔。
 
 # 使用方法
