@@ -3,6 +3,7 @@ const FileSaver = require('file-saver');
 const fs = require('fs');
 const cssPath = 'styles.css';
 const customers = require('./customer.json'); //so convenient
+const products = require('./products.json'); //so convenient
 
 // return a Product object for product list.
 class Product {
@@ -21,12 +22,26 @@ class SalesForm {
 	constructor() {
 		this.count = 0;
 		this.totalPrice = 0;
+		this.ready();
 		document.getElementById('customerName').addEventListener('change', (evt) => this.bindCustomerInfo(evt.target));
 		document.getElementById('addCustomerBtn').addEventListener('click', () => this.editCustomer());
 		document.getElementById('addProductBtn').addEventListener('click', () => this.appendProduct());
 		document.getElementById('saveFilebtn').addEventListener('click', () => this.saveFile());
 	}
 
+	// add customer list, product list.
+	ready() {
+		let customerHtml = '';
+		let productHtml = '';
+		for (let i = 0; i < customers.length; i++) {
+			customerHtml += `<option data-id=${i} value=${customers[i].name}>`;
+		}
+		for (let i = 0; i < products.length; i++) {
+			productHtml += `<option value=${products[i].name}>`;
+		}
+		document.getElementById('customerList').innerHTML = customerHtml;
+		document.getElementById('nameList').innerHTML = productHtml;
+	}
 	// when user choose a custoner, append other information, if it's in customers.json file.
 	bindCustomerInfo(input) {
 		if (input.list.querySelector(`option[value='${input.value}']`) !== null) {
@@ -103,7 +118,7 @@ class SalesForm {
 	deleteProduct(number, priceToMinus) {
 		const domToRemove = document.getElementById(`product${number}`);
 		domToRemove.parentNode.removeChild(domToRemove);
-		totalPrice -= priceToMinus;
+		this.totalPrice -= priceToMinus;
 		document.getElementById('totalPrice').innerHTML = `總金額：${this.totalPrice}`;
 	}
 	
