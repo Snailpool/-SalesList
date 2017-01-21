@@ -82,6 +82,7 @@ class SalesForm {
 	// when user click add product button, add one product in the list, and count total price.
 	appendProduct() {
 		this.count++;
+		let localCount = this.count;
 		const newProduct = new Product(document.getElementById('name').value, document.getElementById('pricePerBox').value,
 										document.getElementById('count').value, document.getElementById('memo').value);
 		document.getElementById('name').value
@@ -106,16 +107,18 @@ class SalesForm {
 													<td style="width: 300px;" class="list-table__cell  list-table__cell--long">
 														${newProduct.memo}
 													</td>
-													<td  class="list-table__cell  edit-cell btn--delete" onclick="deleteProduct(${count},${newProduct.totalPrice})">
+													<td  class="list-table__cell  edit-cell btn--delete" id="deletebtn${this.count}" >
 														刪除
 													</td>
 												</tr>`);
+		document.getElementById(`deletebtn${this.count}`).addEventListener('click', ()=> this.deleteProduct(localCount, newProduct.totalPrice));
 		this.totalPrice += newProduct.totalPrice;
 		document.getElementById('totalPrice').innerHTML = `總金額：${this.totalPrice}`;
 	}
 
 	// delete one product.
 	deleteProduct(number, priceToMinus) {
+		//evt.preventDefault;
 		const domToRemove = document.getElementById(`product${number}`);
 		domToRemove.parentNode.removeChild(domToRemove);
 		this.totalPrice -= priceToMinus;
