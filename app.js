@@ -2,8 +2,8 @@ const htmlDocx = require('html-docx-js');
 const FileSaver = require('file-saver');
 const fs = require('fs');
 const cssPath = 'styles.css';
-const customers = require('./customer.json');
-const products = require('./products.json');
+const customers = require('./config/customer.json');
+const products = require('./config/products.json');
 
 // return a Product object for product list.
 class Product {
