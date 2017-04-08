@@ -9,8 +9,8 @@
     "eslint-plugin-import": "^2.2.0"
   },
   "window": {
-    "width": 800,
-    "height": 600,
+    "width": 1100,
+    "height": 700,
     "toolbar": true
   },
   "dependencies": {

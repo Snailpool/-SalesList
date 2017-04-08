@@ -1,40 +1,56 @@
 body{
 	margin: 0;
 }
-.add-block{
+.addBlock{
 	background-color: #4b585f;
 }
-.add-table{
+.addTable{
 	color:white;
 	height: 65px;
 }
-.add-table__cell{
+.addTable + .addTable{
+	border-top: 1px solid white;
+}
+.addTable-cell{
 	text-align: center;
 	width: 180px;
+	font-weight: 300;
     border-right: 1px solid white;
 }
-.list-table__cell{
+.addTable-cell--long{
+	width: 380px;
+	font-weight: 300;
+    border-right: 1px solid white;
+}
+
+.listTable-cell{
     border-bottom: dashed 1px gray;
 	width: 140px;
 	text-align: center;
 }
-thead .list-table__cell{
+thead .listTable-cell{
     border-bottom: solid 1px gray;
 }
-.add-table__cell:last-child{
+.addTable-cell:last-child{
     border-right: none;
 }
-.add-table__input{
+.addTable-input{
     width: 80%;
 }
+.addTable-input--short{
+	width: 40%;
+}
 .btn{
-	width:80px;
 	height:25px;
+	padding: 0 10px;
 	color:white;
 	border: none;
+	font-size: 14px;
 	background-color: #009688;
 	cursor: pointer;
-	font-weight: 600;
+}
+.btn--clear{
+	background-color: rgb(255, 88, 51);
 }
 .btn--delete{
 	background-color:transparent;
@@ -43,26 +59,38 @@ thead .list-table__cell{
 	font-weight: 600;
 }
 .btn--save{
-    clear: both;
-	float: right;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(75, 88, 95, 0.23);
+    height: 60px;
+    color: #4b585f;
+    transition: .2s;
 }
-.sales-block__total{
+.btn--save:hover{
+    background-color: #009688;
+    color: white;
+}
+.productBlock-total{
 	text-align: right;
 }
-.list-table{
+.listTable{
     font-size: 12px;
     width: 100%;
 }
-.list-table__cell--long{
+.listTable-cell--long{
     width: 300px;
 }
-.sales-block {
+.productBlock {
+    max-height: 450px;
+    overflow: scroll;
     min-height: 400px;
+    padding: 0 50px;
 }
-.sales-block__title{
+.productBlock-title{
 	text-align: center;
 }
-.upper-table{
+.upperTable{
 	font-size:12px;
 	width:100%;
 }

@@ -2,101 +2,149 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>銷貨單</title>
+		<title>報價單</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
   <body>
-	<div class="add-block">
-		<table class="add-table">
+	<div class="addBlock">
+		<table class="addTable">
 			<thead>
 				<tr>
-					<th class="add-table__cell">客戶名稱</th>
-					<th class="add-table__cell">客戶地址</th>
-					<th class="add-table__cell">客戶電話</th>
-					<th class="add-table__cell">客戶傳真</th>
-					<th class="add-table__cell">操作</th>
+					<th class="addTable-cell--long">記帳區間</th>
+					<th class="addTable-cell">客戶名稱</th>
+					<th class="addTable-cell">客戶地址</th>
+					<th class="addTable-cell">客戶電話</th>
+					<th class="addTable-cell">客戶傳真</th>
+					<th class="addTable-cell">操作</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td class="add-table__cell">
-					 	<input class="add-table__input" list="customerList" id="customerName" >
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input--short" 
+							id="rangeFrom" 	
+							type="date" /> ~
+						<input 
+							class="addTable-input--short" 
+							id="rangeTo" 
+							type="date" />
+					</td>
+					<td class="addTable-cell">
+					 	<input 
+					 		class="addTable-input" 
+					 		list="customerList" 
+					 		id="customerName" >
 						<datalist id="customerList">
 						</datalist>
 					</td>
-					<td class="add-table__cell">
-						<input class="add-table__input" id="address" type="text" />
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input" 
+							id="address" 
+							type="text" />
 					</td>
-					<td class="add-table__cell">
-						<input class="add-table__input" id="phone" type="text" />
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input" 
+							id="phone" 
+							type="text" />
 					</td>
-					<td class="add-table__cell">
-						<input class="add-table__input" id="fax" type="text" />
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input" 
+							id="fax" 
+							type="text" />
 					</td>
-					<td class="add-table__cell">
-						<button class="btn" id="addCustomerBtn" >確定</button>
+					<td class="addTable-cell">
+						<button 
+							class="btn" 
+							id="addCustomerBtn" >確定</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<table class="add-table">
+		<table class="addTable">
 			<thead>
 				<tr>
-					<th class="add-table__cell">品名規格</th>
-					<th class="add-table__cell">銷貨單價</th>
-					<th class="add-table__cell">銷貨數量</th>
-					<th class="add-table__cell">備註</th>
-					<th class="add-table__cell">操作</th>
+					<th class="addTable-cell--long">訂貨日期</th>
+					<th class="addTable-cell">品名規格</th>
+					<th class="addTable-cell">銷貨單價</th>
+					<th class="addTable-cell">銷貨數量</th>
+					<th class="addTable-cell">備註</th>
+					<th class="addTable-cell">操作</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td class="add-table__cell">
-					 	<input class="add-table__input" list="nameList" id="name">
-						<datalist id="nameList">
-						</datalist>
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input" 
+							id="date" 
+							type="date" />
 					</td>
-					<td class="add-table__cell">
-						<input class="add-table__input" id="pricePerBox" type="text" />
+					<td class="addTable-cell">
+					 	<input 
+					 		class="addTable-input" 
+					 		list="nameList" 
+					 		id="name" />
+						<datalist id="nameList"></datalist>
 					</td>
-					<td class="add-table__cell">
-						<input class="add-table__input" id="count" type="text" />箱
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input" 
+							id="pricePerBox" 
+							type="number" />
 					</td>
-					<td class="add-table__cell">
-						<input class="add-table__input" id="memo" type="text" />
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input" 
+							id="count" 
+							type="number" /> 箱
 					</td>
-					<td class="add-table__cell">
-						<button class="btn"  id="addProductBtn" >新增</button>
+					<td class="addTable-cell">
+						<input 
+							class="addTable-input" 
+							id="memo" 
+							type="text" />
+					</td>
+					<td class="addTable-cell">
+						<button 
+							class="btn"  
+							id="addProductBtn" >新增</button>
+						<button 
+							class="btn btn--clear" 
+							id="clearProductBtn" >清除</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-    <div class="sales-block" id="salesBlock">
-		<h1 class="sales-block__title">銷貨單</h1>
-		<table class="upper-table" id="customerTable">
-		</table>
+    <div class="productBlock" id="salesBlock">
+		<h1 class="productBlock-title">報價單</h1>
+		<table class="upperTable" id="customerTable"></table>
 		<br/>
 		<br/>
-    	<table class="list-table">
+    	<table class="listTable">
 			<thead>
 				<tr>
-					<th class="list-table__cell">品名規格</th>
-					<th class="list-table__cell">銷貨單價</th>
-					<th class="list-table__cell">銷貨數量</th>
-					<th class="list-table__cell">小計</th>
-					<th class="list-table__cell list-table__cell--long">備註</th>
-					<th class="list-table__cell edit-cell">操作</th>
+					<th class="listTable-cell">訂貨日期</th>
+					<th class="listTable-cell">品名規格</th>
+					<th class="listTable-cell">銷貨單價</th>
+					<th class="listTable-cell">銷貨數量</th>
+					<th class="listTable-cell">小計</th>
+					<th class="listTable-cell listTable-cell--long">備註</th>
+					<th class="listTable-cell edit-cell">操作</th>
 				</tr>
 			</thead>
 			<tbody id="productList">
 			</tbody>
 		</table>
-		<p id="totalPrice" class="sales-block__total">
+		<p id="totalPrice" class="productBlock-total">
 		</p>
     </div>
 	<button class="btn btn--save" id="saveFilebtn">儲存檔案</button>
-	<script src="app.js"></script>
+	<script src="app/app.js"></script>
   </body>
 </html>
 
